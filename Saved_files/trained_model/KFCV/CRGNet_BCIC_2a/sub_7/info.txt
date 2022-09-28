@@ -1,0 +1,2 @@
+All_accu:[tensor(0.9688), tensor(0.9688), tensor(0.9643), tensor(0.9286), tensor(1.), tensor(0.8929), tensor(1.), tensor(1.), tensor(0.9643), tensor(1.)]
+Average accuracy:0.9687500596046448

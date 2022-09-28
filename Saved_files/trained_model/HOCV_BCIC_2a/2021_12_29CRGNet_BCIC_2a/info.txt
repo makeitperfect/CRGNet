@@ -1,0 +1,2 @@
+All_accu:[tensor(0.8646, device='cuda:0'), tensor(0.6458, device='cuda:0'), tensor(0.9340, device='cuda:0'), tensor(0.7743, device='cuda:0'), tensor(0.7326, device='cuda:0'), tensor(0.6597, device='cuda:0'), tensor(0.9062, device='cuda:0'), tensor(0.8715, device='cuda:0'), tensor(0.7847, device='cuda:0')]
+Average accuracy:0.7970678806304932
