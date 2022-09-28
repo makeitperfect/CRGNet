@@ -59,5 +59,5 @@ If you find it useful, please cite our paper as follows:
 + This code does not yet support GPU acceleration and it is recommended to train the model on CPU.
 
 ## Acknowledgements
-+ The Biliner mapping and LogEig layer are derived from SPDNet. Thanks to the authors of the patper 'A Riemannian Network for SPD Matrix Learning'.
++ The Biliner mapping and LogEig layer are derived from SPDNet. Thanks to the authors of the paper 'A Riemannian Network for SPD Matrix Learning'.
 + Thanks to Alireza Davoudi for the [Python implementation of SPDNet](https://github.com/adavoudi/spdnet).

@@ -21,16 +21,16 @@ from Data_process import EEG_Dataset
 def ho_train(sub,eary_stop_epoch=200,net_name = 'CRGNet',initial_path = None):
     '''
     Use hold out setting to train Net
-    @author:Klein Liu
+    @author:Wenchao Liu
     '''
     
-    # #设置随机数的种子
+    # Set random seed
     seed = 20210908
     data_seed = 20210723
     torch.manual_seed(seed)
     
     if net_name is None:
-        print('请选择要使用的模型！')
+        print('Please input the model\'s name!')
         return
     save_path = os.path.join(r'.\Saved_files\trianed_model\HOCV',datetime.datetime.now().strftime('%Y_%m_%d') +net_name)
     
@@ -67,7 +67,7 @@ def ho_train(sub,eary_stop_epoch=200,net_name = 'CRGNet',initial_path = None):
     best_accu = 0.00
     remaining_epoch = eary_stop_epoch
     mini_loss = None
-    # 第一步
+    # First stage
     for epoch in range(1000):
         
         Net.train()
@@ -110,12 +110,12 @@ def ho_train(sub,eary_stop_epoch=200,net_name = 'CRGNet',initial_path = None):
             best_accu = validation_accu
             
             
-    print('早停开始使用全部数据进行训练')
+    print('Early stopping and use all the trainning data to retrain the model')
     
-    #第二步
-    #首先加载最好上一步中最好的模型的模型
-    Net.load_state_dict(best_Net)
-    optimizer.optimizer.load_state_dict(optimizer_state)
+    #Second stage
+    
+    # Net.load_state_dict(best_Net)
+    # optimizer.optimizer.load_state_dict(optimizer_state)
     
     split_validation_dataloader = DataLoader(split_validation_dataset,batch_size=16,shuffle=True)
     for epoch in range(800):
@@ -157,17 +157,17 @@ def ho_train(sub,eary_stop_epoch=200,net_name = 'CRGNet',initial_path = None):
     
     
     
-    # 在测试集上检测效果
+    # Evaluate on the test dataset
     x,y = test_dataset.feature,test_dataset.label
     predict = Net(x).detach()
     
     test_accu = torch.sum(torch.argmax(predict,dim=1)==y,dtype = torch.float32)/len(y)
     print('sub:{}--acc:{}'.format(sub,test_accu))
     
-    #保存模型
+    #Save model
     print(file_name)
     torch.save(Net.state_dict(),os.path.join(save_path,file_name))
-    print('模型保存成功')
+    print('Saved succefully!')
     
     return test_accu
 
