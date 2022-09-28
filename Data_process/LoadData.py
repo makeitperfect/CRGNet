@@ -202,7 +202,7 @@ class LoadBCIC_E(LoadData):
 
 
 if __name__ == '__main__':
-    path = r'F:\pycharmProject\Git_project\EEG_Codebase\Raw_data\BCICIV_2b_gdf'
+    path = r'.\Raw_data\BCICIV_2b_gdf'
     load_raw_data = LoadBCIC_2b(path,5)
     # train_x,train_y = load_raw_data.get_train_data()
     test_x,test_y = load_raw_data.get_test_data()
