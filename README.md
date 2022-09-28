@@ -1,4 +1,4 @@
-# CRGNet：implementation of CRGNet in pytorch
+# CRGNet(CNN and Riemannian Geometry Network)：implementation in pytorch
 Convolutional neural network and riemannian geometry hybrid approach for motor imagery classification
 
 ## Introduction
