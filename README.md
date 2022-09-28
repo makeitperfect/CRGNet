@@ -55,7 +55,7 @@ If you find it useful, please cite our paper as follows:
 }
 ```
 ## Notes
-+ The operatoins of QR and SVD make the reasults different from different devices,even if fix the random seed. 
++ The operation of QR and SVD makes the results different for different devices, even with a fixed random seed.
 + This code does not yet support GPU acceleration and it is recommended to train the model on CPU.
 
 ## Acknowledgements
