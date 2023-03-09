@@ -18,6 +18,7 @@ Two different cross-validation forms are utilized for the performance evaluation
 4. numpy
 5. sklearn
 6. scipy
+7. einops
 
 ## Dataset
 We evaluated our model using [BCI Competition Dataset IV 2a](https://www.bbci.de/competition/iv/results/).
